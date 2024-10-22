@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form dengan Class dan Id</title>
+<style>
+/* CSS Internal */
+.form-container {
+background-color: aquamarine;
+color: blueviolet;
+padding: 20px;
+margin: 50px auto; /* Menambahkan margin agar form berada di 
+tengah */
+width: 300px;
+border-radius: 10px;
+}
+.input-field {
+margin-bottom: 10px;
+display: block;
+width: 100%;
+padding: 8px; /* Menambahkan padding pada input field */
+box-sizing: border-box; /* Agar padding tidak melebihi ukuran */
+}
+#submitBtn {
+background-color: blueviolet;
+color: white;
+padding: 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+width: 100%; /* Menambahkan lebar penuh pada tombol submit */
+}
+#submitBtn:hover {
+background-color: darkviolet;
+}
+label {
+margin-bottom: 5px;
+display: block;
+}
+textarea {
+padding: 10px; /* Menambahkan padding pada textarea */
+}
+h1{
+text-align: center;
+}
+</style>
+</head>
+<body>
+<h1 class="form-container"> <img src="Capture.PNG" width="50px"
+height="50px"><br/>Formulir Pendaftaran Peserta </h1>
+<form class="form-container">
+<label for="nama">Nama:</label>
+<input id="nama" class="input-field" type="text" name="nama">
+<label for="alamat">Alamat:</label>
+<input id="alamat" class="input-field" type="text" name="alamat">
+<label for="password">Password:</label>
+<input id="password" class="input-field" type="password" name="pass">
+<label>Jenis Kelamin:</label>
+<input type="radio" name="jk" value="laki-laki"> Laki-Laki
+<input type="radio" name="jk" value="perempuan"> Perempuan
+<br/><br/>
+<label>Bahasa Pemrograman yang Dikuasai:</label>
+<input type="checkbox" name="web"> Web
+<input type="checkbox" name="mobile"> Mobile
+<input type="checkbox" name="desk"> Desktop
+<br/><br/>
+<label for="kota">Kota Asal:</label>
+<select id="kota" class="input-field">
+<option>Semarang</option>
+<option>Bandung</option>
+</select>
+<br/><br/>
+<label for="pesan">Pesan Anda:</label>
+<textarea id="pesan" class="input-field"></textarea>
+<br/>
+<input id="submitBtn" type="submit" value="Proses">
+</form>
+</body>
+</html>

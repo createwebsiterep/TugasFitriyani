@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form dengan Class dan Id</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    /* CSS Internal */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f3f0ff; /* Warna latar belakang soft ungu */
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-container {
+        background-color: #a682ff; /* Ungu muda */
+        color: #ffffff;
+        padding: 30px;
+        margin: 50px auto;
+        width: 350px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+        transition: transform 0.3s ease;
+    }
+
+    .form-container:hover {
+        transform: translateY(-5px); /* Efek melayang saat hover */
+    }
+
+    .input-field {
+        margin-bottom: 15px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #c3baff; /* Warna border ungu muda */
+        border-radius: 5px;
+        background-color: #f3f0ff; /* Warna latar belakang input */
+        box-sizing: border-box;
+        font-size: 14px;
+        transition: border 0.3s ease;
+    }
+
+    .input-field:focus {
+        border-color: #5d3eff; /* Warna border saat fokus */
+        outline: none;
+    }
+
+    #submitBtn, #resetBtn {
+        background-color: #5d3eff; /* Ungu gelap */
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 48%;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    #resetBtn {
+        background-color: #FF6B6B; /* Merah untuk reset */
+    }
+
+    #submitBtn:hover, #resetBtn:hover {
+        background-color: #4529a7; /* Warna ungu yang lebih gelap saat hover */
+    }
+
+    #resetBtn:hover {
+        background-color: #ff4949;
+    }
+
+    label {
+        margin-bottom: 8px;
+        display: block;
+        font-weight: bold;
+    }
+
+    textarea {
+        padding: 12px;
+        border: 1px solid #c3baff;
+        border-radius: 5px;
+        background-color: #f3f0ff;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    select {
+        padding: 10px;
+        border: 1px solid #c3baff;
+        border-radius: 5px;
+        background-color: #f3f0ff;
+        width: 100%;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    form {
+        text-align: left;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #5d3eff;
+        color: white;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /* Tooltip */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%; 
+        left: 50%;
+        margin-left: -100px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Tombol reset dan submit berdampingan */
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+</head>
+<body>
+<h1 class="form-container">
+    <img src="logo-sma.png" width="50px" height="50px">
+    Formulir Pendaftaran Peserta
+</h1>
+<form class="form-container">
+    <label for="nama">Nama:</label>
+    <input id="nama" class="input-field" type="text" name="nama" placeholder="Masukkan nama Anda">
+    
+    <label for="alamat">Alamat:</label>
+    <input id="alamat" class="input-field" type="text" name="alamat" placeholder="Masukkan alamat Anda">
+    
+    <label for="password">Password:</label>
+    <div class="tooltip">
+        <input id="password" class="input-field" type="password" name="pass" placeholder="Masukkan password Anda">
+        <span class="tooltiptext">Min. 8 karakter, 1 huruf besar, 1 angka</span>
+    </div>
+    
+    <label>Jenis Kelamin:</label>
+    <input type="radio" name="jk" value="laki-laki"> Laki-Laki
+    <input type="radio" name="jk" value="perempuan"> Perempuan
+    <br/><br/>
+    
+    <label>Bahasa Pemrograman yang Dikuasai:</label>
+    <input type="checkbox" name="web"> Web
+    <input type="checkbox" name="mobile"> Mobile
+    <input type="checkbox" name="desk"> Desktop
+    <br/><br/>
+    
+    <label for="kota">Kota Asal:</label>
+    <select id="kota" class="input-field">
+        <option>Semarang</option>
+        <option>Bandung</option>
+    </select>
+    
+    <label for="pesan">Pesan Anda:</label>
+    <textarea id="pesan" class="input-field" placeholder="Tulis pesan Anda di sini"></textarea>
+    <br/>
+    
+    <div class="button-group">
+        <input id="submitBtn" type="submit" value="Proses">
+        <input id="resetBtn" type="reset" value="Reset">
+    </div>
+</form>
+
+<footer>
+    <p>&copy; 2024 SMK Prestasi Prima | Kontak: info@prestasi-prima.sch.id</p>
+</footer>
+</body>
+</html>
